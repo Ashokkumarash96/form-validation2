@@ -29,14 +29,14 @@ function checkInputs() {
 
   //###################################
   if (passwordValue === "") {
-    setErrorInput(password, "Password connot be blank.");
+    setErrorInput(password, "Password Required");
   } else {
     setSuccessInput(password) && validatePassword(passwordValue);
   }
 
   //###################################
   if (password2Value === "") {
-    setErrorInput(password2, "Password connot be blank.");
+    setErrorInput(password2, "Password confirmation Required");
   } else if (password2Value !== passwordValue) {
     setErrorInput(password2, "Password dose not match.");
   } else {
