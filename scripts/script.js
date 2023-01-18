@@ -38,7 +38,7 @@ function checkInputs() {
   if (password2Value === "") {
     setErrorInput(password2, "Password confirmation Required");
   } else if (password2Value !== passwordValue) {
-    setErrorInput(password2, "Password dose not match.");
+    setErrorInput(password2, "Password does not match.");
   } else {
     setSuccessInput(password2);
   }
