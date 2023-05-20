@@ -10,31 +10,32 @@ form.addEventListener("submit", (e) => {
 });
 
 function checkInputs() {
-  //Get the value the form field.
-  const usernameValue = username.value.trim(); //trim to remove blank space.
+  // Get the value of the form fields and trim to remove blank spaces.
+  const usernameValue = username.value.trim();
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
   const password2Value = password2.value.trim();
+
   if (usernameValue === "") {
     setErrorInput(username, "UserName cannot be blank.");
   } else {
     setSuccessInput(username);
   }
-  //###################################
+
   if (emailValue === "") {
     setErrorInput(email, "Email cannot be blank.");
   } else {
+    // Validate the email format using the validateEmail function.
     validateEmail(emailValue) && setSuccessInput(email);
   }
 
-  //###################################
   if (passwordValue === "") {
     setErrorInput(password, "Password Required");
   } else {
+    // Validate the password format using the validatePassword function.
     setSuccessInput(password) && validatePassword(passwordValue);
   }
 
-  //###################################
   if (password2Value === "") {
     setErrorInput(password2, "Password confirmation Required");
   } else if (password2Value !== passwordValue) {
